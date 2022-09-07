@@ -47,3 +47,29 @@ it('should request the right information from TH country', async () => {
   expect(result.data).toHaveProperty('search')
   expect(Object.assign({}, result?.data?.search)).toStrictEqual(expectedObject)
 })
+
+it('should create a search for RU country', async () => {
+  const expectedObject = {
+    zipcode: '101000',
+    country: 'Russia',
+    city: 'Москва',
+    state: 'Москва',
+  }
+  const result = await apolloServer.executeOperation({
+    query: gql`
+      mutation {
+        search: createSearch(input: { zipcode: "101000", country: "RU" }) {
+          zipcode
+          country
+          city
+          state
+        }
+      }
+    `,
+  })
+  expect(result).toBeTruthy()
+  expect(result.errors).toBeFalsy()
+  expect(result.data).toBeTruthy()
+  expect(result.data).toHaveProperty('search')
+  expect(Object.assign({}, result?.data?.search)).toStrictEqual(expectedObject)
+})
