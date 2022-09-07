@@ -1,9 +1,4 @@
-interface CountryType {
-  code: string
-  label: string
-  phone: string
-  suggested?: boolean
-}
+import { CountryType } from '../graphql/types'
 
 export const countries: readonly CountryType[] = [
   { code: 'AD', label: 'Andorra', phone: '376' },
