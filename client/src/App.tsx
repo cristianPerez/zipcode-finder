@@ -1,28 +1,21 @@
 import React from 'react'
-import Button from '@mui/material/Button'
-import Container from '@mui/material/Container'
-import Box from '@mui/material/Box'
-import TextField from '@mui/material/TextField'
-
-import logo from './logo.svg'
-import CountrySelect from './components/CountrySelect'
+import { ApolloProvider } from '@apollo/client'
 
 import './App.css'
+import logo from './logo.svg'
+import { client } from './graphql/apolloclient'
+import SearchBar from './components/SearchBar'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-      <Container maxWidth="sm">
-        <Box>
-          <CountrySelect />
-          <TextField id="outlined-basic" label="ZipCode" variant="outlined" />
-          <Button color='primary' variant="contained">Submit</Button>
-        </Box>
-      </Container>
-    </div>
+    <ApolloProvider client={client}>
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+        </header>
+        <SearchBar />
+      </div>
+    </ApolloProvider>
   )
 }
 
