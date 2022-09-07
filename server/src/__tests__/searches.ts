@@ -5,7 +5,7 @@ it('should show trow an error because zipcode is wrong', async () => {
   const result = await apolloServer.executeOperation({
     query: gql`
       query {
-        search(zipcode: "10500", countryAbb: "US") {
+        search(zipcode: "10500", country: "US") {
           zipcode
           country
           city
@@ -32,7 +32,7 @@ it('should request the right information from TH country', async () => {
   const result = await apolloServer.executeOperation({
     query: gql`
       query {
-        search(zipcode: "10500", countryAbb: "TH") {
+        search(zipcode: "10500", country: "TH") {
           zipcode
           country
           city

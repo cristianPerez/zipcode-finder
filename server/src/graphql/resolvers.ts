@@ -2,6 +2,9 @@ import { getSearch } from '../helpers'
 
 export const resolvers = {
   Query: {
-    search: async (_root, { zipcode, countryAbb }) => getSearch(zipcode, countryAbb),
+    search: (_root, { zipcode, country }) => getSearch(zipcode, country),
   },
+  Mutation: {
+    createSearch: (_root, { input: { zipcode, country } }) => getSearch(zipcode, country),
+  }
 }
