@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { v4 as uuidv4 } from 'uuid'
 
 // TODO add to a config file and env vars
 const BASE_URL = 'https://api.zippopotam.us'
@@ -14,10 +15,12 @@ export const getSearch = async (zipcode: string, country: string) => {
     })
     const place = data.places.shift()
     return {
+      id: uuidv4(),
       zipcode: data['post code'],
       country: data?.country,
+      countryAbb: country,
       city: place['place name'],
-      state: place?.state
+      state: place?.state,
     }
   } catch (error) {
     // TODO check the status of the request

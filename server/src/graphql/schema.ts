@@ -2,7 +2,8 @@ import { gql } from 'apollo-server'
 
 export const typeDefs = gql`
   type Query {
-    search(zipcode: String!, country: String!): Search
+    search(zipcode: String!, country: String!): Search,
+    searches: [Search!]
   }
 
   type Mutation {
@@ -15,8 +16,10 @@ export const typeDefs = gql`
   }
 
   type Search {
+    id: ID!
     zipcode: String
     country: String
+    countryAbb: String
     city: String
     state: String
   }
