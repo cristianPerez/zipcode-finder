@@ -8,6 +8,7 @@ export const typeDefs = gql`
 
   type Mutation {
     createSearch(input: CreateSearchInput): Search
+    deleteSearches: [Search]
   }
 
   input CreateSearchInput {
