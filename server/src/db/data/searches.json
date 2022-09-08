@@ -6,5 +6,13 @@
     "countryAbb": "RU",
     "city": "Москва",
     "state": "Москва"
+  },
+  {
+    "id": "5ace8580-f4a0-44b0-91b0-64fad4ce6958",
+    "zipcode": "90210",
+    "country": "United States",
+    "countryAbb": "US",
+    "city": "Beverly Hills",
+    "state": "California"
   }
 ]

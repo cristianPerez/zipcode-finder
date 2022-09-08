@@ -2,7 +2,7 @@ import React from 'react'
 import { ApolloProvider } from '@apollo/client'
 
 import './App.css'
-import logo from './logo.svg'
+import logo from './assets/zip-code.png'
 import { client } from './graphql/apolloclient'
 import SearchBar from './components/SearchBar'
 import ListOfSearches from './components/ListOfSearches'
