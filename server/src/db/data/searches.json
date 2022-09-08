@@ -1,0 +1,18 @@
+[
+  {
+    "id": "fca28e25-62d3-44c0-a28c-181afd5d7a8a",
+    "zipcode": "10500",
+    "country": "Thailand",
+    "countryAbb": "TH",
+    "city": "Bang Rak",
+    "state": "Bangkok"
+  },
+  {
+    "id": "37c8ea1f-b353-436f-ba53-e6eeffccec05",
+    "zipcode": "90210",
+    "country": "United States",
+    "countryAbb": "US",
+    "city": "Beverly Hills",
+    "state": "California"
+  }
+]
