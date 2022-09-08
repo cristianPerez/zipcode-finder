@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
 import Button from '@mui/material/Button'
-import Container from '@mui/material/Container'
 import TextField from '@mui/material/TextField'
 import Autocomplete from '@mui/material/Autocomplete'
 import Box from '@mui/material/Box'
@@ -18,15 +17,14 @@ const SearchBar = () => {
 
   const handleSubmit = async (event: React.SyntheticEvent) => {
     event.preventDefault()
-    const search = await createSearch({
+    await createSearch({
       zipcode: zipcode || '',
       country: country?.code,
     })
-    console.log('[SEARCH], :', search)
   }
 
   return (
-    <Container maxWidth="sm">
+    <>
       <Box component="form" noValidate autoComplete="off">
         {error ? (
           <Alert severity="error">Check your data and try again</Alert>
@@ -88,7 +86,7 @@ const SearchBar = () => {
           </Button>
         )}
       </Box>
-    </Container>
+    </>
   )
 }
 
