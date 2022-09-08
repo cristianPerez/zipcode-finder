@@ -1,5 +1,12 @@
 import { CountryType } from '../graphql/types'
 
+export const defaultCountry = {
+  code: 'US',
+  label: 'United States',
+  phone: '1',
+  suggested: true,
+}
+
 export const countries: readonly CountryType[] = [
   { code: 'AD', label: 'Andorra', phone: '376' },
   {
